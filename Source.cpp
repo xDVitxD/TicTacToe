@@ -73,20 +73,6 @@ void DrawBoard()
 	}
 }
 
-short CheckWinner(std::vector<std::vector<short>> UsedSteps, std::pair<short, short> CurrentPosition, short DirectX, short DirectY, short CurrentLength = 1)
-{
-	int X = CurrentPosition.first + DirectX, Y = CurrentPosition.second + DirectY;
-	if (X >= 0 && X <= 2 && Y >= 0 && Y <= 2 && UsedSteps.at(Y).at(X) == FreeTile)
-	{
-		if (Board[CurrentPosition.second][CurrentPosition.first] == Board[Y][X])
-			CurrentLength++;
-		UsedSteps[Y][X] = Board[CurrentPosition.second][CurrentPosition.first];
-		CurrentLength = CheckWinner(UsedSteps, std::pair<short, short>{X, Y}, DirectX, DirectY, CurrentLength);
-	}
-
-	return CurrentLength;
-}
-
 int main()
 {
 	while (true)
