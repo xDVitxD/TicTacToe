@@ -1,2 +1,1 @@
-Console version of Tic Tac Toe game.
-Written on C++. Tested on Windows 10.
+Console version of Tic Tac Toe game.<br />Written on C++. Tested on Windows 10.
